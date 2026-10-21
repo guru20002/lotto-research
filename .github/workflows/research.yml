@@ -1,0 +1,38 @@
+name: Lotto Research
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "17 2 * * *"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: lotto-research
+  cancel-in-progress: false
+
+jobs:
+  analyze:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Run analysis
+        run: python lotto_research.py
+      - name: Commit latest report
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add results/latest_report.json results/latest_report.md
+          if ! git diff --cached --quiet; then
+            git commit -m "Update automated Lotto research report"
+            git push
+          else
+            echo "No report changes to commit"
+          fi
