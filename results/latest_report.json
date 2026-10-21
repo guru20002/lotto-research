@@ -1,0 +1,75 @@
+{
+  "generated_utc": "2026-10-21T20:45:14.213932+00:00",
+  "dataset": "Lotto.csv",
+  "valid_draws": 3474,
+  "date_range": {
+    "first": "03/09/1968",
+    "last": "20/10/2026"
+  },
+  "method": {
+    "name": "rolling-window frequency baseline",
+    "window_draws": 52,
+    "selected_main_numbers": 5,
+    "max_number": 37,
+    "out_of_sample_draws": 3422,
+    "monte_carlo_trials": 20000
+  },
+  "results": {
+    "frequency_model_mean_hits_per_draw": 0.8235,
+    "random_ticket_simulated_mean_hits_per_draw": 0.82671,
+    "theoretical_random_expectation_hits_per_draw": 0.81081,
+    "frequency_model_total_hits": 2818,
+    "random_null_p_value_one_sided": 0.16904,
+    "interpretation": "No statistically significant advantage detected in this test."
+  },
+  "most_frequent_numbers_all_history": [
+    {
+      "number": 11,
+      "count": 616
+    },
+    {
+      "number": 8,
+      "count": 602
+    },
+    {
+      "number": 1,
+      "count": 601
+    },
+    {
+      "number": 20,
+      "count": 599
+    },
+    {
+      "number": 2,
+      "count": 598
+    },
+    {
+      "number": 6,
+      "count": 595
+    },
+    {
+      "number": 21,
+      "count": 593
+    },
+    {
+      "number": 25,
+      "count": 592
+    },
+    {
+      "number": 3,
+      "count": 590
+    },
+    {
+      "number": 24,
+      "count": 584
+    }
+  ],
+  "experimental_next_ticket": [
+    6,
+    1,
+    18,
+    4,
+    32
+  ],
+  "warning": "Lottery draws are intended to be random. Historical frequencies do not guarantee future results. This exploratory test is not financial advice and does not establish a winning formula."
+}
