@@ -2,6 +2,11 @@ name: Lotto Research
 
 on:
   workflow_dispatch:
+  push:
+    paths:
+      - "Lotto.csv"
+      - "lotto_research.py"
+      - ".github/workflows/research.yml"
   schedule:
     - cron: "17 2 * * *"
 
